@@ -18,7 +18,7 @@ namespace PV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCategorias());
+            Application.Run(new frmProductos());
         }
     }
 }

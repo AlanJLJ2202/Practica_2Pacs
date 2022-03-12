@@ -101,6 +101,7 @@
     <None Include="Properties\DataSources\BLL.ProductoBLL.datasource" />
     <None Include="Properties\DataSources\BLL.UsuarioBLL.datasource" />
     <None Include="Properties\DataSources\BOL.Categorias.datasource" />
+    <None Include="Properties\DataSources\BOL.Marcas.datasource" />
     <None Include="Properties\DataSources\BOL.Productos.datasource" />
     <None Include="Properties\DataSources\BOL.Usuarios.datasource" />
     <None Include="Properties\Settings.settings">

@@ -99,3 +99,5 @@ C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.csproj.CoreCompileInputs.cache
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.csproj.CopyComplete
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.exe
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.pdb
+C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmMain.resources
+C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmProductos.resources

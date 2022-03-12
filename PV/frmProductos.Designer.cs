@@ -33,17 +33,17 @@ namespace PV
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnModificar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEliminar = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gcProductos = new DevExpress.XtraGrid.GridControl();
-            this.z = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnActualizar = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNuevo = new DevExpress.XtraBars.BarButtonItem();
-            this.btnModificar = new DevExpress.XtraBars.BarButtonItem();
-            this.btnEliminar = new DevExpress.XtraBars.BarButtonItem();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gvProductos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colidProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,12 +52,20 @@ namespace PV
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidMarca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colactivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rlupCategorias = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rlupMarca = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.z)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlupCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlupMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -91,79 +99,12 @@ namespace PV
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.Text = "Herramientas";
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(704, 30);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 434);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(704, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 404);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(704, 30);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 404);
-            // 
-            // gcProductos
-            // 
-            this.gcProductos.DataSource = this.productosBindingSource1;
-            this.gcProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcProductos.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gcProductos.EmbeddedNavigator.Buttons.CancelEdit.Enabled = false;
-            this.gcProductos.EmbeddedNavigator.Buttons.Edit.Enabled = false;
-            this.gcProductos.EmbeddedNavigator.Buttons.EndEdit.Enabled = false;
-            this.gcProductos.EmbeddedNavigator.Buttons.Remove.Enabled = false;
-            this.gcProductos.Location = new System.Drawing.Point(0, 30);
-            this.gcProductos.MainView = this.z;
-            this.gcProductos.MenuManager = this.barManager1;
-            this.gcProductos.Name = "gcProductos";
-            this.gcProductos.Size = new System.Drawing.Size(704, 404);
-            this.gcProductos.TabIndex = 4;
-            this.gcProductos.UseEmbeddedNavigator = true;
-            this.gcProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.z});
-            // 
-            // z
-            // 
-            this.z.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colidProducto,
-            this.coldescripcion,
-            this.colidCategoria,
-            this.colprecioUnitario,
-            this.colstock,
-            this.colcodigo,
-            this.colidMarca,
-            this.colactivo});
-            this.z.GridControl = this.gcProductos;
-            this.z.Name = "z";
-            this.z.OptionsBehavior.Editable = false;
-            this.z.OptionsView.ShowGroupPanel = false;
-            // 
             // btnActualizar
             // 
             this.btnActualizar.Caption = "Actualizar";
             this.btnActualizar.Id = 0;
-            this.btnActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnActualizar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnActualizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.ImageOptions.Image")));
+            this.btnActualizar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnActualizar.ImageOptions.LargeImage")));
             this.btnActualizar.Name = "btnActualizar";
             // 
             // btnNuevo
@@ -190,9 +131,80 @@ namespace PV
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
             // 
-            // productosBindingSource
+            // barDockControlTop
             // 
-            this.productosBindingSource.DataSource = typeof(BOL.Productos);
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(883, 30);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 511);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(883, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 481);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(883, 30);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
+            // 
+            // gcProductos
+            // 
+            this.gcProductos.DataSource = this.productosBindingSource1;
+            this.gcProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcProductos.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gcProductos.EmbeddedNavigator.Buttons.CancelEdit.Enabled = false;
+            this.gcProductos.EmbeddedNavigator.Buttons.Edit.Enabled = false;
+            this.gcProductos.EmbeddedNavigator.Buttons.EndEdit.Enabled = false;
+            this.gcProductos.EmbeddedNavigator.Buttons.Remove.Enabled = false;
+            this.gcProductos.Location = new System.Drawing.Point(0, 30);
+            this.gcProductos.MainView = this.gvProductos;
+            this.gcProductos.MenuManager = this.barManager1;
+            this.gcProductos.Name = "gcProductos";
+            this.gcProductos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.rlupCategorias,
+            this.rlupMarca});
+            this.gcProductos.Size = new System.Drawing.Size(883, 481);
+            this.gcProductos.TabIndex = 4;
+            this.gcProductos.UseEmbeddedNavigator = true;
+            this.gcProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvProductos});
+            // 
+            // productosBindingSource1
+            // 
+            this.productosBindingSource1.DataSource = typeof(BOL.Productos);
+            // 
+            // gvProductos
+            // 
+            this.gvProductos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colidProducto,
+            this.coldescripcion,
+            this.colidCategoria,
+            this.colprecioUnitario,
+            this.colstock,
+            this.colcodigo,
+            this.colidMarca,
+            this.colactivo});
+            this.gvProductos.GridControl = this.gcProductos;
+            this.gvProductos.Name = "gvProductos";
+            this.gvProductos.OptionsBehavior.Editable = false;
+            this.gvProductos.OptionsView.ColumnAutoWidth = false;
+            this.gvProductos.OptionsView.ShowGroupPanel = false;
             // 
             // colidProducto
             // 
@@ -214,6 +226,8 @@ namespace PV
             // 
             // colidCategoria
             // 
+            this.colidCategoria.Caption = "Categoria";
+            this.colidCategoria.ColumnEdit = this.rlupCategorias;
             this.colidCategoria.FieldName = "idCategoria";
             this.colidCategoria.MinWidth = 25;
             this.colidCategoria.Name = "colidCategoria";
@@ -250,6 +264,8 @@ namespace PV
             // 
             // colidMarca
             // 
+            this.colidMarca.Caption = "Marca";
+            this.colidMarca.ColumnEdit = this.rlupMarca;
             this.colidMarca.FieldName = "idMarca";
             this.colidMarca.MinWidth = 25;
             this.colidMarca.Name = "colidMarca";
@@ -266,15 +282,51 @@ namespace PV
             this.colactivo.VisibleIndex = 7;
             this.colactivo.Width = 94;
             // 
-            // productosBindingSource1
+            // rlupCategorias
             // 
-            this.productosBindingSource1.DataSource = typeof(BOL.Productos);
+            this.rlupCategorias.AutoHeight = false;
+            this.rlupCategorias.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rlupCategorias.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("idCategoria", "id Categoria", 80, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descripcion", "Categoria", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("activo", "activo", 44, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.rlupCategorias.DataSource = this.categoriasBindingSource;
+            this.rlupCategorias.DisplayMember = "descripcion";
+            this.rlupCategorias.Name = "rlupCategorias";
+            this.rlupCategorias.ValueMember = "idCategoria";
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataSource = typeof(BOL.Categorias);
+            // 
+            // rlupMarca
+            // 
+            this.rlupMarca.AutoHeight = false;
+            this.rlupMarca.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.rlupMarca.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("idMarca", "id Marca", 60, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("descripcion", "Marca", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("activo", "activo", 44, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.rlupMarca.DataSource = this.marcasBindingSource;
+            this.rlupMarca.DisplayMember = "descripcion";
+            this.rlupMarca.Name = "rlupMarca";
+            this.rlupMarca.ValueMember = "idMarca";
+            // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataSource = typeof(BOL.Marcas);
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(BOL.Productos);
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 434);
+            this.ClientSize = new System.Drawing.Size(883, 511);
             this.Controls.Add(this.gcProductos);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -283,11 +335,16 @@ namespace PV
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmProductos.IconOptions.LargeImage")));
             this.Name = "frmProductos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.z)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlupCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rlupMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +359,7 @@ namespace PV
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gcProductos;
-        private DevExpress.XtraGrid.Views.Grid.GridView z;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvProductos;
         private DevExpress.XtraBars.BarButtonItem btnActualizar;
         private DevExpress.XtraBars.BarButtonItem btnNuevo;
         private DevExpress.XtraBars.BarButtonItem btnModificar;
@@ -317,5 +374,9 @@ namespace PV
         private DevExpress.XtraGrid.Columns.GridColumn colidMarca;
         private DevExpress.XtraGrid.Columns.GridColumn colactivo;
         private System.Windows.Forms.BindingSource productosBindingSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlupCategorias;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit rlupMarca;
+        private System.Windows.Forms.BindingSource marcasBindingSource;
     }
 }
