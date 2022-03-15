@@ -12,28 +12,36 @@ using System.Windows.Forms;
 
 namespace PV
 {
-    public partial class frmProductos : DevExpress.XtraEditors.XtraForm
+    public partial class frmNProducto : DevExpress.XtraEditors.XtraForm
     {
+
         private CategoriaBLL categoriaBLL = CategoriaBLL.Instance();
         private MarcaBLL marcaBLL = MarcaBLL.Instance();
-        private ProductoBLL productoBLL = ProductoBLL.Instance();
 
-        public frmProductos()
+        public frmNProducto()
         {
             InitializeComponent();
         }
 
-        private void frmProductos_Load(object sender, EventArgs e)
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmNProducto_Load(object sender, EventArgs e)
         {
             categoriasBindingSource.DataSource = categoriaBLL.GetAll();
             marcasBindingSource.DataSource = marcaBLL.GetAll();
-            productosBindingSource1.DataSource = productoBLL.GetAll();
-            gvProductos.BestFitColumns();
         }
 
-        private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("El id de categoria es: " + lupCategoria.EditValue);
         }
     }
 }

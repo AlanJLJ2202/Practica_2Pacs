@@ -47,15 +47,15 @@ namespace PV
             this.colidProducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rlupCategorias = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colprecioUnitario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colstock = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidMarca = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colactivo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rlupCategorias = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rlupMarca = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colactivo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProductos)).BeginInit();
@@ -114,6 +114,7 @@ namespace PV
             this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
             this.btnNuevo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.LargeImage")));
             this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNuevo_ItemClick);
             // 
             // btnModificar
             // 
@@ -204,10 +205,12 @@ namespace PV
             this.gvProductos.Name = "gvProductos";
             this.gvProductos.OptionsBehavior.Editable = false;
             this.gvProductos.OptionsView.ColumnAutoWidth = false;
+            this.gvProductos.OptionsView.ShowAutoFilterRow = true;
             this.gvProductos.OptionsView.ShowGroupPanel = false;
             // 
             // colidProducto
             // 
+            this.colidProducto.Caption = "ID";
             this.colidProducto.FieldName = "idProducto";
             this.colidProducto.MinWidth = 25;
             this.colidProducto.Name = "colidProducto";
@@ -217,6 +220,7 @@ namespace PV
             // 
             // coldescripcion
             // 
+            this.coldescripcion.Caption = "Descripcion";
             this.coldescripcion.FieldName = "descripcion";
             this.coldescripcion.MinWidth = 25;
             this.coldescripcion.Name = "coldescripcion";
@@ -234,53 +238,6 @@ namespace PV
             this.colidCategoria.Visible = true;
             this.colidCategoria.VisibleIndex = 2;
             this.colidCategoria.Width = 94;
-            // 
-            // colprecioUnitario
-            // 
-            this.colprecioUnitario.FieldName = "precioUnitario";
-            this.colprecioUnitario.MinWidth = 25;
-            this.colprecioUnitario.Name = "colprecioUnitario";
-            this.colprecioUnitario.Visible = true;
-            this.colprecioUnitario.VisibleIndex = 3;
-            this.colprecioUnitario.Width = 94;
-            // 
-            // colstock
-            // 
-            this.colstock.FieldName = "stock";
-            this.colstock.MinWidth = 25;
-            this.colstock.Name = "colstock";
-            this.colstock.Visible = true;
-            this.colstock.VisibleIndex = 4;
-            this.colstock.Width = 94;
-            // 
-            // colcodigo
-            // 
-            this.colcodigo.FieldName = "codigo";
-            this.colcodigo.MinWidth = 25;
-            this.colcodigo.Name = "colcodigo";
-            this.colcodigo.Visible = true;
-            this.colcodigo.VisibleIndex = 5;
-            this.colcodigo.Width = 94;
-            // 
-            // colidMarca
-            // 
-            this.colidMarca.Caption = "Marca";
-            this.colidMarca.ColumnEdit = this.rlupMarca;
-            this.colidMarca.FieldName = "idMarca";
-            this.colidMarca.MinWidth = 25;
-            this.colidMarca.Name = "colidMarca";
-            this.colidMarca.Visible = true;
-            this.colidMarca.VisibleIndex = 6;
-            this.colidMarca.Width = 94;
-            // 
-            // colactivo
-            // 
-            this.colactivo.FieldName = "activo";
-            this.colactivo.MinWidth = 25;
-            this.colactivo.Name = "colactivo";
-            this.colactivo.Visible = true;
-            this.colactivo.VisibleIndex = 7;
-            this.colactivo.Width = 94;
             // 
             // rlupCategorias
             // 
@@ -300,6 +257,47 @@ namespace PV
             // 
             this.categoriasBindingSource.DataSource = typeof(BOL.Categorias);
             // 
+            // colprecioUnitario
+            // 
+            this.colprecioUnitario.Caption = "Precio Unitario";
+            this.colprecioUnitario.FieldName = "precioUnitario";
+            this.colprecioUnitario.MinWidth = 25;
+            this.colprecioUnitario.Name = "colprecioUnitario";
+            this.colprecioUnitario.Visible = true;
+            this.colprecioUnitario.VisibleIndex = 5;
+            this.colprecioUnitario.Width = 94;
+            // 
+            // colstock
+            // 
+            this.colstock.Caption = "Stock";
+            this.colstock.FieldName = "stock";
+            this.colstock.MinWidth = 25;
+            this.colstock.Name = "colstock";
+            this.colstock.Visible = true;
+            this.colstock.VisibleIndex = 6;
+            this.colstock.Width = 94;
+            // 
+            // colcodigo
+            // 
+            this.colcodigo.Caption = "Codigo";
+            this.colcodigo.FieldName = "codigo";
+            this.colcodigo.MinWidth = 25;
+            this.colcodigo.Name = "colcodigo";
+            this.colcodigo.Visible = true;
+            this.colcodigo.VisibleIndex = 4;
+            this.colcodigo.Width = 94;
+            // 
+            // colidMarca
+            // 
+            this.colidMarca.Caption = "Marca";
+            this.colidMarca.ColumnEdit = this.rlupMarca;
+            this.colidMarca.FieldName = "idMarca";
+            this.colidMarca.MinWidth = 25;
+            this.colidMarca.Name = "colidMarca";
+            this.colidMarca.Visible = true;
+            this.colidMarca.VisibleIndex = 3;
+            this.colidMarca.Width = 94;
+            // 
             // rlupMarca
             // 
             this.rlupMarca.AutoHeight = false;
@@ -317,6 +315,13 @@ namespace PV
             // marcasBindingSource
             // 
             this.marcasBindingSource.DataSource = typeof(BOL.Marcas);
+            // 
+            // colactivo
+            // 
+            this.colactivo.FieldName = "activo";
+            this.colactivo.MinWidth = 25;
+            this.colactivo.Name = "colactivo";
+            this.colactivo.Width = 94;
             // 
             // productosBindingSource
             // 
