@@ -24,11 +24,25 @@ namespace PV
         private void frmCategorias_Load(object sender, EventArgs e)
         {
             gcCategorias.DataSource = categoriaBLL.GetAll();
+            gvCategorias.BestFitColumns();
         }
 
         private void gcCategorias_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModificar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int idCategoria = (int)gvCategorias.GetFocusedRowCellValue("idCategoria");
+            new frmMCategoria(idCategoria).ShowDialog();
+            
+        }
+
+        private void btnActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcCategorias.DataSource = categoriaBLL.GetAll();
+            gvCategorias.BestFitColumns();
         }
     }
 }

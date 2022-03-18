@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using BLL;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,17 @@ namespace PV
 {
     public partial class frmMarcas : DevExpress.XtraEditors.XtraForm
     {
+        private MarcaBLL marcaBLL = MarcaBLL.Instance();
+
         public frmMarcas()
         {
             InitializeComponent();
+        }
+
+        private void frmMarcas_Load(object sender, EventArgs e)
+        {
+            marcasBindingSource.DataSource = marcaBLL.GetAll();
+            gvMarcas.BestFitColumns();
         }
     }
 }

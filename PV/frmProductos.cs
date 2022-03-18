@@ -35,5 +35,10 @@ namespace PV
         {
             
         }
+
+        private void gcProductos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

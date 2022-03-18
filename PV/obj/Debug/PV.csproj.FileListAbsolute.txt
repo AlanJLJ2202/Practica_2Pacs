@@ -103,3 +103,4 @@ C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmMain.resources
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmProductos.resources
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmMarcas.resources
 C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmNProducto.resources
+C:\Users\AJLJ-\source\repos\PV\PV\obj\Debug\PV.frmMCategoria.resources

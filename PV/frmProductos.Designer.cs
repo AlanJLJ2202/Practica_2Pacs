@@ -70,6 +70,8 @@ namespace PV
             // 
             // barManager1
             // 
+            this.barManager1.AllowMoveBarOnToolbar = false;
+            this.barManager1.AllowQuickCustomization = false;
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -185,6 +187,7 @@ namespace PV
             this.gcProductos.UseEmbeddedNavigator = true;
             this.gcProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProductos});
+            this.gcProductos.Click += new System.EventHandler(this.gcProductos_Click);
             // 
             // productosBindingSource1
             // 

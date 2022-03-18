@@ -31,5 +31,34 @@ namespace PV
                 new frmProductos { MdiParent = this }.Show();
             
         }
+
+        private void btnMarcas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+
+                if (form.GetType() == typeof(frmMarcas))
+                {
+                    form.Activate();
+                    return;
+                }
+            new frmMarcas { MdiParent = this }.Show();
+        }
+
+        private void btnCategorias_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+
+                if (form.GetType() == typeof(frmCategorias))
+                {
+                    form.Activate();
+                    return;
+                }
+            new frmCategorias { MdiParent = this }.Show();
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
